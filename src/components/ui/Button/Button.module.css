@@ -1,0 +1,39 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.button_variant_green {
+  background-color: #3DDC84;
+}
+
+.button_variant_blue {
+  background-color: #4285F4;
+}
+
+.button_variant_gray {
+  background-color: #2F2F2F;
+}
+
+.button_variant_green:hover,
+.button_variant_blue:hover,
+.button_variant_gray:hover {
+  opacity: 0.8;
+}
+
+.button_variant_outline {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.button_variant_outline:hover {
+  border-color: #3DDC84;
+}
+
+.button_variant_outline:active {
+  border-color: #4285F4;
+}

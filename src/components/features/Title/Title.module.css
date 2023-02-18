@@ -1,0 +1,11 @@
+.title {
+  color: #fff;
+  padding-bottom: 23px;
+  border-bottom: 1px solid#DADADA;
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    padding-bottom: 27px;
+  }
+}

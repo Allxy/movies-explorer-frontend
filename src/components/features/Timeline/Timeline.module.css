@@ -1,0 +1,35 @@
+.timeline {
+  height: 67px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.timeline__section {
+  height: 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline__label {
+  height: 46%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: #8B8B8B;
+  flex-basis: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .timeline {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .timeline__label {
+    align-items: center;
+    justify-content: center;
+  }
+}
