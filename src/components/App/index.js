@@ -1,4 +1,4 @@
-import Main from "../main/Main";
+import Main from "../pages/Main";
 import styles from "./App.module.css";
 
 function App() {

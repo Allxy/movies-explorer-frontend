@@ -1,6 +1,6 @@
-import Header from "../../layout/Header";
-import AboutProject from "../AboutProject";
-import Promo from "../Promo";
+import Header from "../../features/Header";
+import AboutProject from "../../main/AboutProject";
+import Promo from "../../main/Promo";
 import styles from "./Main.module.css";
 
 function Main() {
