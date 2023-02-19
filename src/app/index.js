@@ -1,11 +1,11 @@
-import Main from "../pages/Main";
-import styles from "./App.module.css";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "../pages";
 
 function App() {
   return (
-    <div className="App">
-      <Main></Main>
-    </div>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   );
 }
 

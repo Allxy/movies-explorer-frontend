@@ -1,11 +1,25 @@
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 import styles from "./Link.module.css";
 
-function Link({ className, children, ...rest }) {
+function Link({ component: C = "a", className, children, ...rest }) {
+  const customClasses = (isActive) =>
+    typeof className === "function" ? className(isActive) : className;
+
+  const classes = ({ isActive }) =>
+    classNames(
+      customClasses(isActive),
+      styles.link,
+      isActive && styles.link_active
+    );
+
   return (
-    <a className={classNames(className, styles.link)} {...rest}>
+    <C
+      className={C === NavLink ? classes : classes({ isActive: false })}
+      {...rest}
+    >
       {children}
-    </a>
+    </C>
   );
 }
 

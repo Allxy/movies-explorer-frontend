@@ -4,6 +4,7 @@
   transition: 0.3s ease all;
 }
 
+.link_active,
 .link:hover {
   color: #3DDC84;
 }
