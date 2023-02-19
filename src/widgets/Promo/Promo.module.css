@@ -32,6 +32,8 @@
 }
 
 .promo__more {
+  display: inline-block;
+  text-decoration: none;
   margin-top: 85px;
 }
 
@@ -59,6 +61,7 @@
 
   .promo__more {
     display: block;
+    width: 90px;
     margin: 92px auto 0;
   }
 }

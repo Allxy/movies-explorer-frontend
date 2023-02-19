@@ -4,6 +4,8 @@
   font-weight: 500;
   font-size: 12px;
   transition: all 0.3s ease;
+  outline: none;
+  border: none;
 }
 
 .button_variant_green {
@@ -14,14 +16,33 @@
   background-color: #4285F4;
 }
 
+.button_variant_lightgray {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  background-color: #303030;
+  border-radius: 10px;
+}
+
 .button_variant_gray {
+  color: #fff;
   background-color: #2F2F2F;
+  border-radius: 6px;
 }
 
 .button_variant_green:hover,
 .button_variant_blue:hover,
-.button_variant_gray:hover {
+.button_variant_gray:hover,
+.button_variant_lightgray:hover {
   opacity: 0.8;
+}
+
+.button_variant_green:active,
+.button_variant_blue:active,
+.button_variant_gray:active,
+.button_variant_lightgray:active {
+  border-color: #4285F4;
 }
 
 .button_variant_outline {

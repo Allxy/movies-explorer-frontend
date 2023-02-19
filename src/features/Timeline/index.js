@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Flex from "../../ui/Flex";
+import Flex from "../../shared/ui/Flex";
 import styles from "./Timeline.module.css";
 
 function Timeline({ children, className }) {

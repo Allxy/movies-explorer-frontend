@@ -1,8 +1,8 @@
-import web from "../../../images/web.png";
-import Button from "../../ui/Button";
-import Container from "../../ui/Container";
-import Flex from "../../ui/Flex";
-import Heading from "../../ui/Heading";
+import web from "../../shared/images/web.png";
+import Button from "../../shared/ui/Button";
+import Container from "../../shared/ui/Container";
+import Flex from "../../shared/ui/Flex";
+import Heading from "../../shared/ui/Heading";
 import styles from "./Promo.module.css";
 
 function Promo() {
@@ -22,7 +22,7 @@ function Promo() {
           </div>
           <img src={web} alt="web" className={styles.promo__web}></img>
         </Flex>
-        <Button className={styles.promo__more}>Узнать больше</Button>
+        <Button component="a" href="#about" className={styles.promo__more}>Узнать больше</Button>
       </Container>
     </section>
   );

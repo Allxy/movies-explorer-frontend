@@ -1,9 +1,10 @@
-@import url(./vendor/normalize.css);
-@import url(./vendor/fonts.css);
+@import url(./shared/lib/normalize.css);
+@import url(./shared/lib/fonts.css);
 
 .page {
   margin: 0;
   color: #fff;
+  background-color: #202020;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,4 +12,3 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
-

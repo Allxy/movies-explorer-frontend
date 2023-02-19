@@ -6,6 +6,7 @@ function Button({
   variant = "outline",
   className,
   children,
+  ...rest
 }) {
   return (
     <C
@@ -14,6 +15,7 @@ function Button({
         styles["button_variant_" + variant],
         className
       )}
+      {...rest}
     >
       {children}
     </C>

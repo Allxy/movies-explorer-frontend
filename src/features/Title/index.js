@@ -1,5 +1,5 @@
 import styles from "./Title.module.css";
-import Heading from "../../ui/Heading";
+import Heading from "../../shared/ui/Heading";
 import classNames from "classnames";
 
 function Title({ children, className }) {

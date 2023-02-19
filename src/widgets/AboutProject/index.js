@@ -1,12 +1,12 @@
 import Title from "../../features/Title";
-import Container from "../../ui/Container";
-import Flex from "../../ui/Flex";
+import Container from "../../shared/ui/Container";
+import Flex from "../../shared/ui/Flex";
 import Timeline from "../../features/Timeline";
 import styles from "./AboutProject.module.css";
 
-function AboutProject() {
+function AboutProject({ id }) {
   return (
-    <section className={styles.about}>
+    <section id={id} className={styles.about}>
       <Container>
         <Title className={styles.about__title}>О проекте</Title>
         <Flex className={styles.about__content}>
