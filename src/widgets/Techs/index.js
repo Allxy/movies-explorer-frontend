@@ -39,6 +39,7 @@ function Techs() {
                 variant="lightgray"
                 href={tech[1]}
                 target="_blank"
+                rel="noreferrer"
                 className={styles.techs__link}
               >
                 {tech[0]}

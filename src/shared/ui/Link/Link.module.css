@@ -1,0 +1,13 @@
+.link {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease all;
+}
+
+.link:hover {
+  color: #3DDC84;
+}
+
+.link:active {
+  opacity: 0.6;
+}
