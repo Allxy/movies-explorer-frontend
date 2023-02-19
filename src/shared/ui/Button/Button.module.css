@@ -42,7 +42,7 @@
 .button_variant_blue:active,
 .button_variant_gray:active,
 .button_variant_lightgray:active {
-  border-color: #4285F4;
+  background-color: #4285F4;
 }
 
 .button_variant_outline {
