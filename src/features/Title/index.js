@@ -1,6 +1,6 @@
-import styles from "./Title.module.css";
-import Heading from "../../shared/ui/Heading";
 import classNames from "classnames";
+import { Heading } from "../../shared";
+import styles from "./Title.module.css";
 
 function Title({ children, className }) {
   return (

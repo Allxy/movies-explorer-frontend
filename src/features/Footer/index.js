@@ -1,6 +1,4 @@
-import Container from "../../shared/ui/Container";
-import Flex from "../../shared/ui/Flex";
-import Link from "../../shared/ui/Link";
+import { Container, Flex, Link } from "../../shared";
 import styles from "./Footer.module.css";
 
 function Footer(params) {

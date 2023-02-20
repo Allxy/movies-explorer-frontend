@@ -1,17 +1,16 @@
-import { Outlet, Route, Routes, useLocation } from "react-router-dom";
-import Footer from "../features/Footer";
-import Header from "../features/Header";
+import { Outlet, Route, Routes } from "react-router-dom";
+import { Footer, Header } from "../features";
 import Main from "./Main";
 import Movies from "./Movies";
+import Profile from "./Profile";
+import SavedMovies from "./SavedMovies";
 
-const HeaderLayout = () => {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-};
+const HeaderLayout = () => (
+  <>
+    <Header />
+    <Outlet />
+  </>
+);
 
 const FooterLayout = () => (
   <>
@@ -27,8 +26,9 @@ function Routing() {
         <Route element={<FooterLayout />}>
           <Route path="/" element={<Main />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
-          <Route path="/profile" element={<Movies />}></Route>
+          <Route path="/saved-movies" element={<SavedMovies />}></Route>
         </Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Route>
     </Routes>
   );

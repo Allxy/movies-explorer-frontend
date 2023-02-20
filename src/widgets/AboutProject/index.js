@@ -1,7 +1,5 @@
-import Title from "../../features/Title";
-import Container from "../../shared/ui/Container";
-import Flex from "../../shared/ui/Flex";
-import Timeline from "../../features/Timeline";
+import { Timeline, Title } from "../../features";
+import { Container, Flex } from "../../shared";
 import styles from "./AboutProject.module.css";
 
 function AboutProject({ id }) {

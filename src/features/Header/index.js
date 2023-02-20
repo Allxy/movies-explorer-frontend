@@ -9,7 +9,7 @@ import Logo from "../../shared/ui/Logo";
 import styles from "./Header.module.css";
 
 function Header({ className }) {
-  const [isLog, setLog] = useState(false);
+  const [isLog, setLog] = useState(true);
   const loc = useLocation();
 
   return (

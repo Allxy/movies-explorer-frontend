@@ -1,10 +1,7 @@
 import classNames from "classnames";
-import Links from "../../features/Links";
-import Title from "../../features/Title";
+import { Links, Title } from "../../features";
+import { Container, Flex, Heading } from "../../shared";
 import author from "../../shared/images/author.jpg";
-import Container from "../../shared/ui/Container";
-import Flex from "../../shared/ui/Flex";
-import Heading from "../../shared/ui/Heading";
 import styles from "./AboutMe.module.css";
 
 function AboutMe() {

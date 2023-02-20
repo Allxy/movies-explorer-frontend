@@ -1,7 +1,4 @@
-import AboutMe from "../../widgets/AboutMe";
-import AboutProject from "../../widgets/AboutProject";
-import Promo from "../../widgets/Promo";
-import Techs from "../../widgets/Techs";
+import { AboutMe, AboutProject, Promo, Techs } from "../../widgets";
 
 function Main() {
   return (

@@ -1,7 +1,5 @@
 import classNames from "classnames";
-import Flex from "../../shared/ui/Flex";
-import Link from "../../shared/ui/Link";
-import Heading from "../../shared/ui/Heading";
+import { Flex, Heading, Link } from "../../shared/";
 import styles from "./Links.module.css";
 
 function Links({ className, title, titleComponent = "h3", children }) {
@@ -12,7 +10,9 @@ function Links({ className, title, titleComponent = "h3", children }) {
           {title}
         </Heading>
       )}
-      <Flex direction="column" component="ul" className={styles.links__list}>{children}</Flex>
+      <Flex direction="column" component="ul" className={styles.links__list}>
+        {children}
+      </Flex>
     </section>
   );
 }

@@ -1,8 +1,5 @@
-import Title from "../../features/Title";
-import Container from "../../shared/ui/Container";
-import Flex from "../../shared/ui/Flex";
-import Button from "../../shared/ui/Button";
-import Heading from "../../shared/ui/Heading";
+import { Title } from "../../features";
+import { Container, Flex, Button, Heading } from "../../shared";
 import styles from "./Techs.module.css";
 
 const techs = [
