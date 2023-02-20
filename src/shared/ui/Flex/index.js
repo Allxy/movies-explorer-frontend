@@ -6,6 +6,7 @@ function Flex({
   align,
   justify,
   direction,
+  wide,
   className,
   children,
 }) {
@@ -16,6 +17,7 @@ function Flex({
         align && styles["flex_align_" + align],
         justify && styles["flex_justify_" + justify],
         direction && styles["flex_direction_" + direction],
+        wide && styles["flex_wide"],
         className
       )}
     >
