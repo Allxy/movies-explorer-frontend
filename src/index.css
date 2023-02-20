@@ -13,3 +13,9 @@
   -moz-text-size-adjust: 100%;
   min-width: 320px;
 }
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -2,6 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "../features";
 import Main from "./Main";
 import Movies from "./Movies";
+import NotFound from "./NotFound";
 import Profile from "./Profile";
 import SavedMovies from "./SavedMovies";
 
@@ -30,6 +31,7 @@ function Routing() {
         </Route>
         <Route path="/profile" element={<Profile />}></Route>
       </Route>
+      <Route path="*" element={<NotFound />}></Route>
     </Routes>
   );
 }
