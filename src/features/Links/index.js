@@ -33,7 +33,7 @@ Links.Link = ({ children, className, ...rest }) => {
       <Link
         className={styles.link__a}
         rel="noreferrer"
-        targer="_blank"
+        target="_blank"
         {...rest}
       >
         {children}
