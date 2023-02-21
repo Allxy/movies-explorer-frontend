@@ -9,7 +9,7 @@ function Switcher({ value, children }) {
         type="checkbox"
         hidden
       ></input>
-      <div className={styles.switcher__icon}></div>
+      <span className={styles.switcher__icon}></span>
       {children}
     </label>
   );

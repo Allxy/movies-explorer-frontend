@@ -6,8 +6,8 @@ function Movie({ name = "Без названия", trailer, time = 0, button, im
   const min = time - hours * 60;
 
   return (
-    <a href={trailer} className={styles.movie}>
-      <article className={styles.movie__article}>
+    <article className={styles.movie}>
+      <a href={trailer} className={styles.movie__link}>
         <Flex
           component="header"
           justify="space-between"
@@ -20,13 +20,17 @@ function Movie({ name = "Без названия", trailer, time = 0, button, im
               {hours}ч {min}м
             </span>
           </div>
-          {button}
         </Flex>
         <div className={styles.movie__imgwrapper}>
-          <img src={image} alt="" className={styles.movie__image} />
+          <img
+            src={image}
+            alt={"Картинка фильма " + name}
+            className={styles.movie__image}
+          />
         </div>
-      </article>
-    </a>
+      </a>
+      <div className={styles.movie__btnwrapper}>{button}</div>
+    </article>
   );
 }
 

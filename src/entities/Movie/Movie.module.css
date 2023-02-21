@@ -1,19 +1,16 @@
 .movie {
-  width: 100%;
-}
-
-.movie__article {
   background-color: #222222;
   transition: 0.1s ease transform;
-  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
-.movie__article:hover {
-  transform: scale(1.03);
+.movie__link {
+  display: block;
+  width: 100%;
 }
 
-.movie__article:active {
+.movie:hover {
   transform: scale(1.03);
 }
 
@@ -43,4 +40,10 @@
 
 .movie__image {
   width: 100%;
+}
+
+.movie__btnwrapper {
+  position: absolute;
+  top: 19px;
+  right: 14px;
 }

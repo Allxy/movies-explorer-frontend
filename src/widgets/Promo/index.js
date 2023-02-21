@@ -17,7 +17,7 @@ function Promo() {
               создателя.
             </p>
           </div>
-          <img src={web} alt="web" className={styles.promo__web}></img>
+          <img src={web} alt="Планета из слова web" className={styles.promo__web}></img>
         </Flex>
         <Button component="a" href="#about" className={styles.promo__more}>
           Узнать больше

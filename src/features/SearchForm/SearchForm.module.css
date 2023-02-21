@@ -8,6 +8,10 @@
   border-radius: 8px;
 }
 
+.search__field:focus-within {
+  border: 1.5px solid rgb(170, 170, 170, 0.8);
+}
+
 .search__input {
   flex: 1;
   padding: 0 15px;

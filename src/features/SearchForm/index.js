@@ -9,7 +9,7 @@ function SearchForm({ className }) {
   return (
     <form className={classNames(styles.search, className)}>
       <Flex className={styles.search__field}>
-        <input placeholder="Фильм" className={styles.search__input}></input>
+        <input placeholder="Фильм" required className={styles.search__input}></input>
         <Button variant="blue" className={styles.search__button}>
           Поиск
         </Button>

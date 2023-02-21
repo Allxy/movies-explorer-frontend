@@ -6,7 +6,7 @@ import styles from "./NavigationSidebar.module.css";
 function NavigationSidebar({ links, isOpened, onClose }) {
   return (
     <Drawer onClose={onClose} isOpened={isOpened} className={styles.navigation}>
-      <Flex className={styles.navigation__links}>
+      <Flex component="ul" className={styles.navigation__links}>
         <li>
           <Link
             className={(isActive) =>

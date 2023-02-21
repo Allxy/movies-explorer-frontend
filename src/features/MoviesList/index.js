@@ -7,7 +7,7 @@ function MoviesList({ movies = [], button, className }) {
     <section className={classNames(styles.movies, className)}>
       {movies.map(({ name, time, isSaved, image, id }, i) => (
         <Movie
-        // TO-DO заменить на id
+          // TO-DO заменить на id
           key={i}
           name={name}
           time={time}
