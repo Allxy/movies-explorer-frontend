@@ -42,8 +42,8 @@ function Header({ className }) {
           {isLog ? (
             <>
               <ul className={styles.header__links}>
-                {links.map((link) => (
-                  <li>
+                {links.map((link, i) => (
+                  <li key={i}>
                     <Link
                       className={styles.header__links}
                       component={NavLink}

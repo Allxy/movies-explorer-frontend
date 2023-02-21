@@ -21,8 +21,8 @@ function NavigationSidebar({ links, isOpened, onClose }) {
             Главная
           </Link>
         </li>
-        {links.map((link) => (
-          <li>
+        {links.map((link, i) => (
+          <li key={i}>
             <Link
               className={(isActive) =>
                 classNames(
