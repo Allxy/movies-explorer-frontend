@@ -7,6 +7,7 @@
   outline: none;
   border: none;
   color: #fff;
+  text-decoration: none;
 }
 
 .button_variant_transparent {
@@ -24,6 +25,8 @@
 
 .button_variant_blue {
   background-color: #4285F4;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .button_variant_lightgray {

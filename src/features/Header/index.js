@@ -6,14 +6,21 @@ import Container from "../../shared/ui/Container";
 import Flex from "../../shared/ui/Flex";
 import Link from "../../shared/ui/Link";
 import Logo from "../../shared/ui/Logo";
+import { Link as RouterLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
 function Header({ className }) {
-  const [isLog, setLog] = useState(true);
+  const [isLog, setLog] = useState(false);
   const loc = useLocation();
 
   return (
-    <header className={classNames(styles.header, className, loc.pathname === "/" && styles.header_main)}>
+    <header
+      className={classNames(
+        styles.header,
+        className,
+        loc.pathname === "/" && styles.header_main
+      )}
+    >
       <Container className={styles.header__content}>
         <Link className={styles.header__logo} component={NavLink} to="/">
           <Logo />
@@ -44,8 +51,10 @@ function Header({ className }) {
             </>
           ) : (
             <>
-              <Link className={styles.header__reg}>Регистрация</Link>
-              <Button component="a" variant="green">
+              <Link component={NavLink} to="/signup" className={styles.header__reg}>
+                Регистрация
+              </Link>
+              <Button component={RouterLink} to="/signin" variant="green">
                 Войти
               </Button>
             </>

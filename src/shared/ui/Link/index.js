@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import styles from "./Link.module.css";
 
-function Link({ component: C = "a", className, children, ...rest }) {
+function Link({ component: C = "a", variant, className, children, ...rest }) {
   const customClasses = (isActive) =>
     typeof className === "function" ? className(isActive) : className;
 
@@ -10,7 +10,8 @@ function Link({ component: C = "a", className, children, ...rest }) {
     classNames(
       customClasses(isActive),
       styles.link,
-      isActive && styles.link_active
+      isActive && styles.link_active,
+      variant && styles["link_variant_blue"]
     );
 
   return (

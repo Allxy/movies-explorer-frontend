@@ -5,6 +5,8 @@ import Movies from "./Movies";
 import NotFound from "./NotFound";
 import Profile from "./Profile";
 import SavedMovies from "./SavedMovies";
+import Signin from "./Signin";
+import Signup from "./Signup";
 
 const HeaderLayout = () => (
   <>
@@ -25,13 +27,15 @@ function Routing() {
     <Routes>
       <Route element={<HeaderLayout />}>
         <Route element={<FooterLayout />}>
-          <Route path="/" element={<Main />}></Route>
-          <Route path="/movies" element={<Movies />}></Route>
-          <Route path="/saved-movies" element={<SavedMovies />}></Route>
+          <Route path="/" element={<Main />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/saved-movies" element={<SavedMovies />} />
         </Route>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/profile" element={<Profile />} />
       </Route>
-      <Route path="*" element={<NotFound />}></Route>
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
