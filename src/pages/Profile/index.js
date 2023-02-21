@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { useSession } from "../../entities/Session";
 import { Button, Flex, Heading } from "../../shared";
+import { mainApi } from "../../shared/api/MainApi";
 import styles from "./Profile.module.css";
 
 function Profile(params) {
   const [isEdit, setIsEdit] = useState(false);
+  const [user, setUser] = useSession();
+
+  const logOut = () => {
+    setUser(null);
+    mainApi.removeToken();
+  };
 
   return (
     <Flex
@@ -49,7 +57,11 @@ function Profile(params) {
           </Button>
         )}
 
-        <Button className={styles.profile__exit} variant="transparent">
+        <Button
+          onClick={logOut}
+          className={styles.profile__exit}
+          variant="transparent"
+        >
           Выйти из аккаунта
         </Button>
       </Flex>

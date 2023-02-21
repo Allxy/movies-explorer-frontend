@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, NavLink, useLocation } from "react-router-dom";
+import { useSession } from "../../entities/Session";
 import NavigationSidebar from "../../features/NavigationSidebar";
 import {
   Button,
@@ -18,7 +19,7 @@ const links = [
 ];
 
 function Header({ className }) {
-  const [isLog, setLog] = useState(true);
+  const [user] = useSession();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const loc = useLocation();
 
@@ -39,7 +40,7 @@ function Header({ className }) {
           <Logo />
         </Link>
         <Flex component="nav" align="center" className={styles.header__nav}>
-          {isLog ? (
+          {user ? (
             <>
               <ul className={styles.header__links}>
                 {links.map((link, i) => (

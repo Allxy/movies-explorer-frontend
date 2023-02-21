@@ -9,6 +9,7 @@ function Flex({
   wide,
   className,
   children,
+  ...rest
 }) {
   return (
     <C
@@ -20,6 +21,7 @@ function Flex({
         wide && styles["flex_wide"],
         className
       )}
+      {...rest}
     >
       {children}
     </C>
