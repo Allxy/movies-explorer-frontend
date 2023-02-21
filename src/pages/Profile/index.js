@@ -13,7 +13,9 @@ function Profile(params) {
       wide
       className={styles.profile}
     >
-      <Heading variant="h2" className={styles.profile__title}>Привет, Виталий!</Heading>
+      <Heading variant="h2" className={styles.profile__title}>
+        Привет, Виталий!
+      </Heading>
       <div className={styles.profile__info}>
         <label className={styles.profile__label}>
           Имя
@@ -38,7 +40,9 @@ function Profile(params) {
       </div>
       <Flex className={styles.profile__controls} direction="column">
         {isEdit ? (
-          <Button variant="transparent" onClick={() => setIsEdit(false)}>Сохранить</Button>
+          <Button variant="transparent" onClick={() => setIsEdit(false)}>
+            Сохранить
+          </Button>
         ) : (
           <Button variant="transparent" onClick={() => setIsEdit(true)}>
             Редактировать

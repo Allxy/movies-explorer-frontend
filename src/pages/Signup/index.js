@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Auth from "../../features/Auth";
-import { Link } from "../../shared";
-import Input from "../../shared/ui/Input";
+import { Link, Input } from "../../shared";
 
 function Signup() {
   return (

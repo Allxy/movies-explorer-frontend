@@ -4,7 +4,11 @@ import styles from "./Title.module.css";
 
 function Title({ children, className }) {
   return (
-    <Heading component="h2" variant="h3" className={classNames(styles.title, className)}>
+    <Heading
+      component="h2"
+      variant="h3"
+      className={classNames(styles.title, className)}
+    >
       {children}
     </Heading>
   );

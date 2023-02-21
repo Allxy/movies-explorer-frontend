@@ -19,11 +19,7 @@ function Footer(params) {
           >
             Яндекс.Практикум
           </Link>
-          <Link
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Link href="https://github.com/" target="_blank" rel="noreferrer">
             Github
           </Link>
         </Flex>

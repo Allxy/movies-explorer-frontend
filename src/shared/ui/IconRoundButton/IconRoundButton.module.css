@@ -5,9 +5,13 @@
   width: 30px;
   height: 30px;
   background-color: #313131;
+  color: #fff;
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .button:hover {
@@ -19,6 +23,7 @@
 }
 
 .button_variant_close {
+  background-size: 12px;
   background-image: url(../../images/x.png);
 }
 
@@ -27,6 +32,21 @@
 }
 
 .button_variant_favvis {
-  background-color: #3DDC84;;
+  background-color: #3DDC84;
   background-image: url(../../images/fav_vis.png);
+}
+
+.button_variant_man {
+  background-color: transparent;
+  padding: 0 15px 0 30px;
+  width: unset;
+  background-position: 10px 50%;
+  border: 2px solid #AAAAAA;
+  border-radius: 50px;
+  background-image: url(../../images/man.svg);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
 }

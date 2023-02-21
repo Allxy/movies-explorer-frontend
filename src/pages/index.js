@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
-import { Footer, Header } from "../features";
+import { Footer, Header } from "../widgets";
 import Main from "./Main";
 import Movies from "./Movies";
 import NotFound from "./NotFound";

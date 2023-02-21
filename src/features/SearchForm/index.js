@@ -1,10 +1,9 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { Button, Flex } from "../../shared";
-import Switcher from "../../shared/ui/Switcher";
+import { Button, Flex, Switcher } from "../../shared";
 import styles from "./SearchForm.module.css";
 
-function SearchForm({className}) {
+function SearchForm({ className }) {
   const [enabled, setEnabled] = useState(false);
 
   return (

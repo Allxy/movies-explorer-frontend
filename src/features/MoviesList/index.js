@@ -11,7 +11,7 @@ function MoviesList({ movies = [], button, className }) {
           name={name}
           time={time}
           image={image}
-          button={button({isSaved, id})}
+          button={button({ isSaved, id })}
         />
       ))}
     </section>
