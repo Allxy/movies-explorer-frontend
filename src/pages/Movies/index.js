@@ -1,5 +1,11 @@
+import MoviesSearch from "../../widgets/MoviesSearch";
+
 function Movies(params) {
-  return <main></main>;
+  return (
+    <main>
+      <MoviesSearch />
+    </main>
+  );
 }
 
 export default Movies;

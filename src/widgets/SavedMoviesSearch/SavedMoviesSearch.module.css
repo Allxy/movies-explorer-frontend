@@ -1,0 +1,10 @@
+@media screen and (max-width: 767px) {
+  .savedmoviessearch {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .savedmoviessearch__search {
+    margin: 0 4px;
+  }
+}

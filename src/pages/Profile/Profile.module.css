@@ -1,7 +1,5 @@
 .profile__title {
   margin: 73px 0 120px;
-  font-size: 24px;
-  line-height: 29px;
 }
 
 .profile__info {
@@ -62,9 +60,6 @@
 
 @media screen and (max-width: 767px) {
   .profile__title {
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: 0;
     margin: 70px 0 77px;
   }
 

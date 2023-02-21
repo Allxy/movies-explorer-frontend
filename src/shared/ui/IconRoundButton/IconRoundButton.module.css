@@ -1,0 +1,32 @@
+.button {
+  transition: all 0.3s ease;
+  outline: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: #313131;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button:active {
+  scale: 0.9;
+}
+
+.button_variant_close {
+  background-image: url(../../images/x.png);
+}
+
+.button_variant_fav {
+  background-image: url(../../images/fav.png);
+}
+
+.button_variant_favvis {
+  background-color: #3DDC84;;
+  background-image: url(../../images/fav_vis.png);
+}

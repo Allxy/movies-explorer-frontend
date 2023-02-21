@@ -40,7 +40,11 @@ function AboutMe() {
           alt="Фотография автора"
         />
       </Flex>
-      <Links className={styles.about__portfolio} title="Портфолио">
+      <Links
+        className={styles.about__portfolio}
+        title="Портфолио"
+        titleVariant="h4"
+      >
         <Links.Link href="">Статичный сайт</Links.Link>
         <Links.Link href="">Адаптивный сайт</Links.Link>
         <Links.Link href="">Одностраничное приложение</Links.Link>

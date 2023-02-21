@@ -1,6 +1,6 @@
 .about {
-  padding: 110px 0;
-  background-color: #202020;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 
 .about__title {
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 1023px) {
   .about {
-    padding: 90px 0;
+    padding: 90px 50px;
   }
 
   .about__content {
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 767px) {
   .about {
-    padding: 70px 4px;
+    padding: 70px 20px;
   }
 
   .about__content {

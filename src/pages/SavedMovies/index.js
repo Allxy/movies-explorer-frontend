@@ -1,5 +1,11 @@
+import SavedMoviesSearch from "../../widgets/SavedMoviesSearch";
+
 function SavedMovies() {
-  return <main></main>;
+  return (
+    <main>
+      <SavedMoviesSearch />
+    </main>
+  );
 }
 
 export default SavedMovies;

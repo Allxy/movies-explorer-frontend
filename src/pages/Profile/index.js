@@ -13,7 +13,7 @@ function Profile(params) {
       wide
       className={styles.profile}
     >
-      <Heading className={styles.profile__title}>Привет, Виталий!</Heading>
+      <Heading variant="h2" className={styles.profile__title}>Привет, Виталий!</Heading>
       <div className={styles.profile__info}>
         <label className={styles.profile__label}>
           Имя

@@ -39,7 +39,7 @@
 
 @media screen and (max-width: 1023px) {
   .promo {
-    padding: 140px 0 76px;
+    padding: 140px 20px 76px;
   }
 
   .promo__content {

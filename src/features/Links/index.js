@@ -2,11 +2,21 @@ import classNames from "classnames";
 import { Flex, Heading, Link } from "../../shared/";
 import styles from "./Links.module.css";
 
-function Links({ className, title, titleComponent = "h3", children }) {
+function Links({
+  className,
+  title,
+  titleComponent = "h3",
+  titleVariant,
+  children,
+}) {
   return (
     <section className={classNames(className, styles.links)}>
       {title && (
-        <Heading className={styles.links__title} component={titleComponent}>
+        <Heading
+          className={styles.links__title}
+          component={titleComponent}
+          variant={titleVariant}
+        >
           {title}
         </Heading>
       )}
