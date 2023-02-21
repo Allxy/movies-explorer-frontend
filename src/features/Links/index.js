@@ -30,7 +30,12 @@ function Links({
 Links.Link = ({ children, className, ...rest }) => {
   return (
     <li className={classNames(styles.link, className)}>
-      <Link className={styles.link__a} {...rest}>
+      <Link
+        className={styles.link__a}
+        rel="noreferrer"
+        targer="_blank"
+        {...rest}
+      >
         {children}
         <span className={styles.links__arrow}>&#8599;</span>
       </Link>

@@ -45,9 +45,15 @@ function AboutMe() {
         title="Портфолио"
         titleVariant="h4"
       >
-        <Links.Link href="">Статичный сайт</Links.Link>
-        <Links.Link href="">Адаптивный сайт</Links.Link>
-        <Links.Link href="">Одностраничное приложение</Links.Link>
+        <Links.Link href="https://allxy.github.io/how-to-learn/">
+          Статичный сайт
+        </Links.Link>
+        <Links.Link href="https://allxy.github.io/russian-travel/">
+          Адаптивный сайт
+        </Links.Link>
+        <Links.Link href="https://testo-mesto.nomoredomainsclub.ru/sign-in">
+          Одностраничное приложение
+        </Links.Link>
       </Links>
     </Container>
   );
