@@ -1,0 +1,49 @@
+.movie {
+  background-color: #222222;
+  transition: 0.1s ease transform;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie__link {
+  display: block;
+  width: 100%;
+}
+
+.movie:hover {
+  transform: scale(1.03);
+}
+
+.movie__header {
+  padding: 14px;
+}
+
+.movie__name {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0 0 5px;
+}
+
+.movie__time {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #8B8B8B;
+}
+
+.movie__imgwrapper {
+  height: 0;
+  width: 100%;
+  padding-bottom: 56%;
+}
+
+.movie__image {
+  width: 100%;
+}
+
+.movie__btnwrapper {
+  position: absolute;
+  top: 19px;
+  right: 14px;
+}

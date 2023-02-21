@@ -1,0 +1,40 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navigation__links {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 160px;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.navigation__link {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0 0 4px;
+  position: relative;
+}
+
+.navigation__link_active {
+  color: #fff;
+}
+
+.navigation__link_active::after {
+  content: "";
+  display: block;
+  margin-top: 3px;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.navigation__account {
+  margin-top: auto;
+  margin-bottom: 65px;
+}
