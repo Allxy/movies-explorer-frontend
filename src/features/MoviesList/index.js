@@ -5,9 +5,10 @@ import styles from "./MoviesList.module.css";
 function MoviesList({ movies = [], button, className }) {
   return (
     <section className={classNames(styles.movies, className)}>
-      {movies.map(({ name, time, isSaved, image, id }) => (
+      {movies.map(({ name, time, isSaved, image, id }, i) => (
         <Movie
-          key={id}
+        // TO-DO заменить на id
+          key={i}
           name={name}
           time={time}
           image={image}
