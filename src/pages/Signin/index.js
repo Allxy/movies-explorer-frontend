@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSession } from "../../entities/Session";
 import { Auth } from "../../features";
@@ -7,21 +8,22 @@ import { useFormWithValidation } from "../../shared/hooks/useForm";
 
 function Signin() {
   const { values, errors, handleChange, isValid } = useFormWithValidation();
-  const [user, setSession] = useSession();
+  const [, setSession] = useSession();
+  const [error, setError] = useState("");
 
   const onSubmit = async () => {
     try {
+      setError("")
       const { token } = await mainApi.login(values);
       mainApi.setToken(token);
       const userData = await mainApi.check();
       setSession(userData);
     } catch (err) {
+      setError("Неверный email или пароль!")
       mainApi.removeToken();
       console.error(err);
     }
   };
-
-  console.log(user);
 
   return (
     <Auth
@@ -37,6 +39,7 @@ function Signin() {
       }
       isValid={isValid}
       onSubmit={onSubmit}
+      error={error}
     >
       <Input
         value={values.email ?? ""}

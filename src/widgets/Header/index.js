@@ -40,7 +40,7 @@ function Header({ className }) {
           <Logo />
         </Link>
         <Flex component="nav" align="center" className={styles.header__nav}>
-          {user ? (
+          {user && (
             <>
               <ul className={styles.header__links}>
                 {links.map((link, i) => (
@@ -59,34 +59,36 @@ function Header({ className }) {
                 Аккаунт
               </IconRoundButton>
             </>
-          ) : (
-            <>
-              <Link
-                component={NavLink}
-                to="/signup"
-                className={styles.header__reg}
-              >
-                Регистрация
-              </Link>
-              <Button component={RouterLink} to="/signin" variant="green">
-                Войти
-              </Button>
-            </>
           )}
         </Flex>
+        {!user ? (
+          <Flex component="nav" align="center" className={styles.header__auth}>
+            <Link
+              component={RouterLink}
+              to="/signup"
+              className={styles.header__reg}
+            >
+              Регистрация
+            </Link>
+            <Button component={RouterLink} to="/signin" variant="green">
+              Войти
+            </Button>
+          </Flex>
+        ) : (
+          <button
+            className={styles.header__burger}
+            onClick={() => setIsMenuOpened(true)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        )}
         <NavigationSidebar
           links={links}
           isOpened={isMenuOpened}
           onClose={() => setIsMenuOpened(false)}
         />
-        <button
-          className={styles.header__burger}
-          onClick={() => setIsMenuOpened(true)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </Container>
     </header>
   );

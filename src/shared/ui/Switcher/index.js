@@ -1,13 +1,15 @@
 import styles from "./Switcher.module.css";
 
-function Switcher({ value, children }) {
+function Switcher({ value, children, onChange, name }) {
   return (
     <label className={styles.switcher}>
       <input
-        value={value}
+        checked={value}
         className={styles.switcher__checkbox}
         type="checkbox"
+        name={name}
         hidden
+        onChange={onChange}
       ></input>
       <span className={styles.switcher__icon}></span>
       {children}

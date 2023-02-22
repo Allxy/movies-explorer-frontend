@@ -28,6 +28,7 @@ function Profile(params) {
 
   const logOut = () => {
     setUser(null);
+    sessionStorage.clear()
     mainApi.removeToken();
   };
 

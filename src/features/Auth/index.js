@@ -1,9 +1,10 @@
+import classNames from "classnames";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Flex, Heading, Logo } from "../../shared";
 import styles from "./Auth.module.css";
 
-function Auth({ title, button, children, link, onSubmit, isValid }) {
+function Auth({ title, button, children, link, onSubmit, isValid, error }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
@@ -27,6 +28,14 @@ function Auth({ title, button, children, link, onSubmit, isValid }) {
         className={styles.auth__form}
       >
         {children}
+        <p
+          className={classNames(
+            styles.auth__error,
+            error && styles.auth__error_active
+          )}
+        >
+          {error}
+        </p>
         <Button
           disabled={!isValid || isLoading}
           onClick={handleSubmit}

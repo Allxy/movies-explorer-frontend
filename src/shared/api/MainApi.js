@@ -30,6 +30,14 @@ class MainApi extends Api {
     localStorage.removeItem("token");
   }
 
+  saveMovie(data) {
+    return this._fetch("/movies", "POST", data);
+  }
+
+  deleteMovie(id) {
+    return this._fetch("/movies/" + id, "DELETE");
+  }
+
   movies() {
     return this._fetch("/movies", "GET");
   }

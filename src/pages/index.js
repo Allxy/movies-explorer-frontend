@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { useSession } from "../entities/Session";
-import { mainApi } from "../shared/api/MainApi";
 import { Preloader } from "../shared";
+import { mainApi } from "../shared/api/MainApi";
 import { Footer, Header } from "../widgets";
 import Main from "./Main";
 import Movies from "./Movies";
@@ -26,11 +26,11 @@ const FooterLayout = () => (
   </>
 );
 
-const AuthLayout = () => {
+const AuthLayout = ({ auth = false, to = "/" }) => {
   const [user] = useSession();
 
-  if (user) {
-    return <Navigate to="/" />;
+  if (!user === auth) {
+    return <Navigate to={to} />;
   }
 
   return <Outlet />;
@@ -47,22 +47,12 @@ const SessionLayout = () => {
         .catch(() => mainApi.removeToken())
         .finally(() => setLoading(false));
     } else {
-      setLoading(false)
+      setLoading(false);
     }
   }, []);
 
   if (loading) {
     return <Preloader></Preloader>;
-  }
-
-  return <Outlet />;
-};
-
-const PrivateOutlet = () => {
-  const [user] = useSession();
-
-  if (!user) {
-    return <Navigate to="/signin" />;
   }
 
   return <Outlet />;
@@ -75,16 +65,16 @@ function Routing() {
         <Route element={<HeaderLayout />}>
           <Route element={<FooterLayout />}>
             <Route path="/" element={<Main />} />
-            <Route element={<PrivateOutlet />}>
+            <Route element={<AuthLayout auth={true} />}>
               <Route path="/movies" element={<Movies />} />
               <Route path="/saved-movies" element={<SavedMovies />} />
             </Route>
           </Route>
-          <Route element={<PrivateOutlet />}>
+          <Route element={<AuthLayout auth={true} />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
         </Route>
-        <Route path="" element={<AuthLayout />}>
+        <Route path="" element={<AuthLayout to={"/movies"} />}>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
         </Route>

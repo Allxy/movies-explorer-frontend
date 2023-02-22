@@ -1,22 +1,34 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useRef } from "react";
 import { Button, Flex, Switcher } from "../../shared";
 import styles from "./SearchForm.module.css";
 
-function SearchForm({ className }) {
-  const [enabled, setEnabled] = useState(false);
+function SearchForm({ className, onSubmit, value, children }) {
+  const ref = useRef(null);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSubmit(ref.current.value);
+  };
 
   return (
-    <form className={classNames(styles.search, className)}>
+    <form
+      onSubmit={handleSearch}
+      className={classNames(styles.search, className)}
+    >
       <Flex className={styles.search__field}>
-        <input placeholder="Фильм" required className={styles.search__input}></input>
-        <Button variant="blue" className={styles.search__button}>
+        <input
+          placeholder="Фильм"
+          ref={ref}
+          defaultValue={value}
+          required
+          className={styles.search__input}
+        ></input>
+        <Button type="submit" variant="blue" className={styles.search__button}>
           Поиск
         </Button>
       </Flex>
-      <Flex className={styles.search__constols}>
-        <Switcher value={enabled}>Короткометражки</Switcher>
-      </Flex>
+      <Flex className={styles.search__constols}>{children}</Flex>
     </form>
   );
 }
