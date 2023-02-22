@@ -1,15 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useSession } from "../../entities/Session";
 import Auth from "../../features/Auth";
-import { Link, Input } from "../../shared";
+import { Input, Link } from "../../shared";
 import { mainApi } from "../../shared/api/MainApi";
 import { useFormWithValidation } from "../../shared/hooks/useForm";
 
 function Signup() {
   const { values, errors, handleChange, isValid } = useFormWithValidation();
+  const [, setUser] = useSession();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    return mainApi.register(values);
+  const onSubmit = async (e) => {
+    try {
+      await mainApi.register(values);
+      const { token } = await mainApi.login({
+        email: values.email,
+        password: values.password,
+      });
+      mainApi.setToken(token);
+      const userData = await mainApi.check();
+      setUser(userData);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -25,7 +37,7 @@ function Signup() {
         </>
       }
       onSubmit={onSubmit}
-      isValid={!isValid}
+      isValid={isValid}
     >
       <Input
         value={values.name ?? ""}

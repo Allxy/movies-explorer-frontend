@@ -34,6 +34,10 @@ class MainApi extends Api {
     return this._fetch("/movies", "GET");
   }
 
+  userPatch(data) {
+    return this._fetch("/users/me", "PATCH", data);
+  }
+
   check() {
     return this._fetch("/users/me", "GET");
   }
