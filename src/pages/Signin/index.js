@@ -13,13 +13,18 @@ function Signin() {
 
   const onSubmit = async () => {
     try {
-      setError("")
+      setError("");
       const { token } = await mainApi.login(values);
       mainApi.setToken(token);
       const userData = await mainApi.check();
       setSession(userData);
     } catch (err) {
-      setError("Неверный email или пароль!")
+      if(err.message === "Validation failed")
+        setError("Не валидные данные для входа!");
+      else if(err.message === "Wrong email or password")
+        setError("Неверный email или пароль!");
+      else 
+        setError("Что-то пошло не так...");
       mainApi.removeToken();
       console.error(err);
     }

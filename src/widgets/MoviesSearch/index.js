@@ -71,9 +71,22 @@ function MoviesSearch(params) {
   };
 
   const handleSave = (data) => {
+    setSavedMovies([...savedMovies, data]);
     mainApi
       .saveMovie(data)
-      .then((resp) => setSavedMovies([...savedMovies, resp]));
+      .then((resp) =>
+        setSavedMovies((prev) =>
+          prev.map((el) => {
+            if (el.movieId === resp.movieId) return { ...el, _id: resp._id };
+            return el;
+          })
+        )
+      )
+      .catch((err) => {
+        setSavedMovies(
+          savedMovies.filter((movie) => movie.movieId !== data.movieId)
+        );
+      });
   };
 
   const handleDelete = (id) => {
@@ -94,8 +107,8 @@ function MoviesSearch(params) {
         <Switcher
           name="shorts"
           onChange={(e) => {
-            setShorts(e.target.checked)
-            sessionStorage.setItem("shorts", e.target.checked )
+            setShorts(e.target.checked);
+            sessionStorage.setItem("shorts", e.target.checked);
           }}
           value={shorts}
         >

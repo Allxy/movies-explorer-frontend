@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useState } from "react";
 import { useSession } from "../../entities/Session";
 import { Button, Flex, Heading } from "../../shared";
@@ -13,22 +14,37 @@ function Profile(params) {
     name: user.name,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleSave = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setMessage("")
+    setIsError(false);
     mainApi
       .userPatch(values)
       .then((data) => {
         setUser(data);
         setIsEdit(false);
+        setMessage("Изменения сохранены!");
+      })
+      .catch((err) => {
+        if (err.message === "Email is busy") {
+          setMessage("Такой email уже используется!");
+        } else if (err.message === "Validation failed") {
+          setMessage("Данные не валидны!");
+        } else {
+          setMessage("Что-то пошло не так!");
+        }
+        setIsError(true);
       })
       .finally(() => setIsLoading(false));
   };
 
   const logOut = () => {
     setUser(null);
-    sessionStorage.clear()
+    sessionStorage.clear();
     mainApi.removeToken();
   };
 
@@ -58,6 +74,7 @@ function Profile(params) {
               value={values.name}
               onChange={handleChange}
               className={styles.profile__input}
+              required
             ></input>
           </label>
           <label className={styles.profile__label}>
@@ -68,11 +85,22 @@ function Profile(params) {
               type="email"
               value={values.email}
               onChange={handleChange}
+              required
               className={styles.profile__input}
             ></input>
           </label>
         </div>
         <Flex className={styles.profile__controls} direction="column">
+          {message && (
+            <p
+              className={classNames(
+                styles.profile__message,
+                isError && styles.profile__message_error
+              )}
+            >
+              {message}
+            </p>
+          )}
           {isEdit ? (
             <Button
               type="submit"
@@ -89,6 +117,7 @@ function Profile(params) {
               onClick={(e) => {
                 e.preventDefault();
                 setIsEdit(true);
+                setMessage("")
               }}
             >
               Редактировать

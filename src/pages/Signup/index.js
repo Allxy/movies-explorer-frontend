@@ -23,6 +23,11 @@ function Signup() {
       const userData = await mainApi.check();
       setUser(userData);
     } catch (err) {
+      if (err.message === "Validation failed")
+        setError("Не валидные данные для входа!");
+      else if (err.message === "User is already exists")
+        setError("Такой email уже занят!");
+      else
         setError("Что-то пошло не так...");
       console.error(err);
     }

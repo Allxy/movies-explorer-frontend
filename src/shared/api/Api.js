@@ -15,6 +15,6 @@ export default class Api {
 
     if (response.ok) return json;
 
-    throw new Error(json.message);
+    throw json;
   }
 }
