@@ -14,7 +14,7 @@ function MoviesSearch(params) {
   const [savedMovies, setSavedMovies] = useState([]);
   const [shorts, setShorts] = useState(false);
   const [filter, setFilter] = useState("");
-  const [start, current, resetCurrent, loadMore] = useMovieCount();
+  const [, current, resetCurrent, loadMore] = useMovieCount();
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 

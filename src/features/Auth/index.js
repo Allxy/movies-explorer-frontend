@@ -42,7 +42,7 @@ function Auth({ title, button, children, link, onSubmit, isValid, error }) {
           variant="blue"
           className={styles.auth__submit}
         >
-          {isLoading ? "Загузка..." : button}
+          {isLoading ? "Загрузка..." : button}
         </Button>
         {link && <span className={styles.auth__link}>{link}</span>}
       </Flex>

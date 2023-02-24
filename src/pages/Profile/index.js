@@ -60,7 +60,7 @@ function Profile(params) {
         className={styles.profile}
       >
         <Heading variant="h2" className={styles.profile__title}>
-          Привет, Виталий!
+          Привет, {user.name}!
         </Heading>
         <div className={styles.profile__info}>
           <label className={styles.profile__label}>
