@@ -24,6 +24,10 @@
   line-height: 20px;
 }
 
+.search__input_error::placeholder {
+  color: #EE3465;
+}
+
 .search__button {
   height: 52px;
   width: 100px;

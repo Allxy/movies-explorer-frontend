@@ -8,4 +8,5 @@ export { default as Input } from "./ui/Input";
 export { default as Link } from "./ui/Link";
 export { default as Logo } from "./ui/Logo";
 export { default as Switcher } from "./ui/Switcher";
+export { default as Preloader } from "./ui/Preloader";
 

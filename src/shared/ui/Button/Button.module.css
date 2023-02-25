@@ -77,6 +77,14 @@
   border-color: #4285F4;
 }
 
+.button_variant_blue:disabled {
+  background-color: #b2cbf1;
+}
+
+.button_variant_transparent:disabled {
+  color: #57585a;
+}
+
 @media screen and (max-width: 1023px) {
   .button_variant_lightgray {
     font-weight: 400;

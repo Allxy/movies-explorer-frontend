@@ -43,6 +43,18 @@
   margin-bottom: 62px;
 }
 
+.profile__message {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #3DDC84;
+  text-align: center;
+}
+
+.profile__message_error {
+  color: #EE3465;
+}
+
 .profile__exit {
   color: #EE3465;
 }

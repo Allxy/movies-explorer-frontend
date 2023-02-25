@@ -16,10 +16,22 @@
   flex: 1;
 }
 
-.auth__submit {
-  margin-top: auto;
-  height: 45px;
+.auth__error {
+  color: #EE3465;
+  margin: auto 0 10px;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  visibility: hidden;
+height: 15px;
+}
 
+.auth__error_active {
+  visibility: visible;
+}
+
+.auth__submit {
+  height: 45px;
 }
 
 .auth__link {
@@ -38,8 +50,13 @@
   }
 
   .auth__submit {
-    margin-top: 130px;
+    margin-top: 0;
   }
+
+  .auth__error {
+    margin: 105px 0 10px;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -63,9 +80,12 @@
   }
 
   .auth__submit {
-    margin-top: auto;
     font-size: 12px;
     line-height: 15px;
+  }
+
+  .auth__error {
+    margin: auto 0 10px;
   }
 
   .auth__link {

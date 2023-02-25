@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, NavLink, useLocation } from "react-router-dom";
+import { useSession } from "../../entities/Session";
 import NavigationSidebar from "../../features/NavigationSidebar";
 import {
   Button,
@@ -18,7 +19,7 @@ const links = [
 ];
 
 function Header({ className }) {
-  const [isLog, setLog] = useState(true);
+  const [user] = useSession();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const loc = useLocation();
 
@@ -39,7 +40,7 @@ function Header({ className }) {
           <Logo />
         </Link>
         <Flex component="nav" align="center" className={styles.header__nav}>
-          {isLog ? (
+          {user && (
             <>
               <ul className={styles.header__links}>
                 {links.map((link, i) => (
@@ -58,34 +59,36 @@ function Header({ className }) {
                 Аккаунт
               </IconRoundButton>
             </>
-          ) : (
-            <>
-              <Link
-                component={NavLink}
-                to="/signup"
-                className={styles.header__reg}
-              >
-                Регистрация
-              </Link>
-              <Button component={RouterLink} to="/signin" variant="green">
-                Войти
-              </Button>
-            </>
           )}
         </Flex>
+        {!user ? (
+          <Flex component="nav" align="center" className={styles.header__auth}>
+            <Link
+              component={RouterLink}
+              to="/signup"
+              className={styles.header__reg}
+            >
+              Регистрация
+            </Link>
+            <Button component={RouterLink} to="/signin" variant="green">
+              Войти
+            </Button>
+          </Flex>
+        ) : (
+          <button
+            className={styles.header__burger}
+            onClick={() => setIsMenuOpened(true)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        )}
         <NavigationSidebar
           links={links}
           isOpened={isMenuOpened}
           onClose={() => setIsMenuOpened(false)}
         />
-        <button
-          className={styles.header__burger}
-          onClick={() => setIsMenuOpened(true)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </Container>
     </header>
   );
